@@ -1,0 +1,3008 @@
+{
+    "imageOnly": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Image",
+                    "source": "https://d2o906d8ln7ui1.cloudfront.net/images/details_01.png"
+                }
+            ]
+        }
+    },
+    "imageWithDatasource": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Image",
+                    "source": "${payload.voxxup.image}"
+                }
+            ]
+        }
+    },
+    "imageWithTextIncorrect1": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Image",
+                    "source": "${payload.voxxup.image}"
+                },
+                {
+                    "type": "Text",
+                    "text": "Meetup Demo"
+                }
+            ]
+        }
+    },
+    "imageWithTextIncorrect2": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Text",
+                    "text": "Meetup Demo"
+                },
+                {
+                    "type": "Image",
+                    "source": "${payload.voxxup.image}"
+                }
+            ]
+        }
+    },
+    "imageWithTextCorrect": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Container",
+                    "item": [
+                        {
+                            "type": "Text",
+                            "text": "Meetup Demo"
+                        },
+                        {
+                            "type": "Image",
+                            "source": "${payload.voxxup.image}"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "standardTemplate1": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            }
+        },
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "when": "${viewport.shape == 'round'}",
+                    "type": "Container",
+                    "direction": "column",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.bodyTemplate7Data.backgroundImage.sources[0].url}",
+                            "scale": "best-fill",
+                            "position": "absolute",
+                            "width": "100vw",
+                            "height": "100vh"
+                        },
+                        {
+                            "type": "AlexaHeader",
+                            "headerTitle": "${payload.bodyTemplate7Data.title}",
+                            "headerAttributionImage": "${payload.bodyTemplate7Data.logoUrl}"
+                        },
+                        {
+                            "type": "Container",
+                            "grow": 1,
+                            "alignItems": "center",
+                            "justifyContent": "center",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "source": "${payload.bodyTemplate7Data.image.sources[0].url}",
+                                    "scale": "best-fill",
+                                    "width": "100vh",
+                                    "height": "70vw",
+                                    "align": "center"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "height": "100vh",
+                    "width": "100vw",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.bodyTemplate7Data.backgroundImage.sources[0].url}",
+                            "scale": "best-fill",
+                            "position": "absolute",
+                            "width": "100vw",
+                            "height": "100vh"
+                        },
+                        {
+                            "type": "AlexaHeader",
+                            "headerTitle": "${payload.bodyTemplate7Data.title}",
+                            "headerAttributionImage": "${payload.bodyTemplate7Data.logoUrl}"
+                        },
+                        {
+                            "type": "Container",
+                            "direction": "row",
+                            "paddingLeft": "5vw",
+                            "paddingRight": "5vw",
+                            "paddingBottom": "5vh",
+                            "alignItems": "center",
+                            "justifyContent": "center",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "height": "70vh",
+                                    "width": "90vw",
+                                    "source": "${payload.bodyTemplate7Data.image.sources[0].url}",
+                                    "scale": "best-fill",
+                                    "align": "center"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "standardTemplate2": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            }
+        },
+        "layouts": {},
+        "mainTemplate": {
+            "description": "********* Full-screen background image **********",
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "when": "${viewport.shape == 'round'}",
+                    "type": "Container",
+                    "direction": "column",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.bodyTemplate1Data.backgroundImage.sources[0].url}",
+                            "position": "absolute",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "scale": "best-fill"
+                        },
+                        {
+                            "type": "AlexaHeader",
+                            "headerTitle": "${payload.bodyTemplate1Data.title}",
+                            "headerAttributionImage": "${payload.bodyTemplate1Data.logoUrl}"
+                        },
+                        {
+                            "type": "Container",
+                            "grow": 1,
+                            "paddingLeft": "@marginLeft",
+                            "paddingRight": "@marginRight",
+                            "paddingBottom": "@marginBottom",
+                            "items": [
+                                {
+                                    "type": "Text",
+                                    "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                                    "fontSize": "@textSizeBody",
+                                    "spacing": "@spacingSmall",
+                                    "style": "textStyleBody"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "height": "100vh",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.bodyTemplate1Data.backgroundImage.sources[0].url}",
+                            "position": "absolute",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "scale": "best-fill"
+                        },
+                        {
+                            "type": "AlexaHeader",
+                            "headerTitle": "${payload.bodyTemplate1Data.title}",
+                            "headerAttributionImage": "${payload.bodyTemplate1Data.logoUrl}"
+                        },
+                        {
+                            "type": "Container",
+                            "paddingLeft": "@marginLeft",
+                            "paddingRight": "@marginRight",
+                            "paddingBottom": "@marginBottom",
+                            "items": [
+                                {
+                                    "type": "Text",
+                                    "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                                    "fontSize": "@textSizeBody",
+                                    "spacing": "@spacingSmall",
+                                    "style": "textStyleBody"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "standardTemplate3": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            }
+        },
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Container",
+                    "height": "100vh",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.bodyTemplate6Data.backgroundImage.sources[0].url}",
+                            "scale": "best-fill",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "position": "absolute"
+                        },
+                        {
+                            "type": "AlexaHeader",
+                            "headerAttributionImage": "${payload.bodyTemplate6Data.logoUrl}"
+                        },
+                        {
+                            "type": "Container",
+                            "grow": 1,
+                            "justifyContent": "${viewport.shape == 'round' ? 'center' : 'end'}",
+                            "items": [
+                                {
+                                    "paddingLeft": "@marginLeft",
+                                    "paddingRight": "@marginRight",
+                                    "type": "Text",
+                                    "text": "${payload.bodyTemplate6Data.textContent.primaryText.text}",
+                                    "style": "textStyleBody",
+                                    "textAlign": "${viewport.shape == 'round' ? 'center' : 'left'}"
+                                }
+                            ]
+                        },
+                        {
+                            "when": "${viewport.shape != 'round'}",
+                            "type": "AlexaFooter",
+                            "footerHint": "${payload.bodyTemplate6Data.hintText}"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "standardTemplate4": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            }
+        },
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "when": "${viewport.shape == 'round'}",
+                    "type": "Container",
+                    "direction": "column",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.bodyTemplate2Data.image.sources[0].url}",
+                            "scale": "best-fill",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "position": "absolute",
+                            "overlayColor": "rgba(0, 0, 0, 0.6)"
+                        },
+                        {
+                            "type": "ScrollView",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "item": [
+                                {
+                                    "type": "Container",
+                                    "direction": "column",
+                                    "alignItems": "center",
+                                    "paddingLeft": "70dp",
+                                    "paddingRight": "70dp",
+                                    "items": [
+                                        {
+                                            "type": "AlexaHeader",
+                                            "headerAttributionImage": "${payload.bodyTemplate2Data.logoUrl}",
+                                            "headerTitle": "${payload.bodyTemplate2Data.title}"
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "text": "<b>${payload.bodyTemplate2Data.textContent.title.text}</b>",
+                                            "style": "textStyleBody",
+                                            "width": "70vw",
+                                            "textAlign": "center"
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "text": "${payload.bodyTemplate2Data.textContent.subtitle.text}",
+                                            "style": "textStylePrimary",
+                                            "width": "70vw",
+                                            "textAlign": "center"
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "text": "${payload.bodyTemplate2Data.textContent.primaryText.text}",
+                                            "paddingTop": 20,
+                                            "style": "textStylePrimary",
+                                            "width": "70vw",
+                                            "textAlign": "center"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.bodyTemplate2Data.backgroundImage.sources[0].url}",
+                            "scale": "best-fill",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "position": "absolute"
+                        },
+                        {
+                            "type": "AlexaHeader",
+                            "headerTitle": "${payload.bodyTemplate2Data.title}",
+                            "headerAttributionImage": "${payload.bodyTemplate2Data.logoUrl}"
+                        },
+                        {
+                            "type": "Container",
+                            "direction": "row",
+                            "paddingLeft": "60dp",
+                            "paddingRight": "72dp",
+                            "grow": 1,
+                            "shrink": 1,
+                            "height": "100vh",
+                            "items": [
+                                {
+                                    "type": "ScrollView",
+                                    "height": "100%",
+                                    "grow": 1,
+                                    "shrink": 1,
+                                    "item": [
+                                        {
+                                            "type": "Container",
+                                            "items": [
+                                                {
+                                                    "type": "Text",
+                                                    "text": "<b>Food pairings</b> | <b>Wine pairings</b>",
+                                                    "style": "textStylePrimary",
+                                                    "color": "#4dd2ff"
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "text": "<b>${payload.bodyTemplate2Data.textContent.title.text}</b>",
+                                                    "style": "textStyleBody"
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "text": "${payload.bodyTemplate2Data.textContent.subtitle.text}",
+                                                    "style": "textStylePrimary"
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "text": "${payload.bodyTemplate2Data.textContent.primaryText.text}",
+                                                    "spacing": "@spacingSmall",
+                                                    "paddingTop": "40dp",
+                                                    "paddingRight": "70dp",
+                                                    "style": "textStylePrimary"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Image",
+                                    "source": "${payload.bodyTemplate2Data.image.sources[0].url}",
+                                    "width": 340,
+                                    "height": 384,
+                                    "scale": "best-fit",
+                                    "align": "center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "AlexaFooter",
+                            "footerHint": "${payload.bodyTemplate2Data.hintText}"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "standardTemplate5": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            }
+        },
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "when": "${viewport.shape == 'round'}",
+                    "type": "Container",
+                    "direction": "column",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.bodyTemplate3Data.image.sources[0].url}",
+                            "scale": "best-fill",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "position": "absolute",
+                            "overlayColor": "rgba(0, 0, 0, 0.6)"
+                        },
+                        {
+                            "type": "ScrollView",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "item": [
+                                {
+                                    "type": "Container",
+                                    "direction": "column",
+                                    "alignItems": "center",
+                                    "paddingLeft": 30,
+                                    "paddingRight": 30,
+                                    "paddingBottom": 200,
+                                    "items": [
+                                        {
+                                            "type": "AlexaHeader",
+                                            "headerAttributionImage": "${payload.bodyTemplate3Data.logoUrl}",
+                                            "headerTitle": "${payload.bodyTemplate3Data.title}"
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "text": "<b>Food pairings</b> | <b>Wine pairings</b>",
+                                            "style": "textStylePrimary",
+                                            "color": "#4dd2ff",
+                                            "width": "90vw",
+                                            "textAlign": "center"
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "text": "<b>${payload.bodyTemplate3Data.textContent.title.text}</b>",
+                                            "style": "textStyleBody",
+                                            "width": "90vw",
+                                            "textAlign": "center"
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "text": "${payload.bodyTemplate3Data.textContent.subtitle.text}",
+                                            "style": "textStylePrimary",
+                                            "width": "90vw",
+                                            "textAlign": "center"
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "text": "${payload.bodyTemplate3Data.textContent.primaryText.text}",
+                                            "paddingTop": 40,
+                                            "style": "textStylePrimary",
+                                            "width": "90vw",
+                                            "textAlign": "center"
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "text": "${payload.bodyTemplate3Data.textContent.bulletPoint.text}",
+                                            "paddingTop": 50,
+                                            "style": "textStylePrimary",
+                                            "width": "90vw",
+                                            "textAlign": "center"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.bodyTemplate3Data.backgroundImage.sources[0].url}",
+                            "scale": "best-fill",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "position": "absolute"
+                        },
+                        {
+                            "type": "AlexaHeader",
+                            "headerTitle": "${payload.bodyTemplate3Data.title}",
+                            "headerAttributionImage": "${payload.bodyTemplate3Data.logoUrl}"
+                        },
+                        {
+                            "type": "Container",
+                            "direction": "row",
+                            "paddingLeft": 40,
+                            "paddingRight": 72,
+                            "grow": 1,
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "source": "${payload.bodyTemplate3Data.image.sources[0].url}",
+                                    "width": "35vw",
+                                    "height": "65vh",
+                                    "scale": "best-fit",
+                                    "align": "center"
+                                },
+                                {
+                                    "type": "ScrollView",
+                                    "height": "60vh",
+                                    "shrink": 1,
+                                    "item": [
+                                        {
+                                            "type": "Container",
+                                            "items": [
+                                                {
+                                                    "type": "Text",
+                                                    "text": "<b>Food pairings</b> | <b>Wine pairings</b>",
+                                                    "style": "textStylePrimary",
+                                                    "color": "#4dd2ff"
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "text": "<b>${payload.bodyTemplate3Data.textContent.title.text}</b>",
+                                                    "style": "textStyleBody"
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "text": "${payload.bodyTemplate3Data.textContent.subtitle.text}",
+                                                    "style": "textStylePrimary"
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "text": "${payload.bodyTemplate3Data.textContent.primaryText.text}",
+                                                    "paddingTop": 40,
+                                                    "style": "textStylePrimary"
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "text": "${payload.bodyTemplate3Data.textContent.bulletPoint.text}",
+                                                    "paddingTop": 50,
+                                                    "style": "textStylePrimary"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "standardTemplate6": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeDetails": 20,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "textStyleBase2": {
+                "description": "Regular version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "500"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinDetails": {
+                "values": {
+                    "fontSize": "@textSizeDetails"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            },
+            "textStyleDetails": {
+                "extend": [
+                    "textStyleBase2",
+                    "mixinDetails"
+                ]
+            }
+        },
+        "layouts": {
+            "FullHorizontalListItem": {
+                "parameters": [
+                    "listLength"
+                ],
+                "item": [
+                    {
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "alignItems": "center",
+                        "justifyContent": "end",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "position": "absolute",
+                                "height": "100vh",
+                                "width": "100vw",
+                                "overlayColor": "rgba(0, 0, 0, 0.6)",
+                                "source": "${data.image.sources[0].url}",
+                                "scale": "best-fill"
+                            },
+                            {
+                                "type": "AlexaHeader",
+                                "headerTitle": "${title}",
+                                "headerAttributionImage": "${logo}",
+                                "grow": 1
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${data.textContent.primaryText.text}",
+                                "style": "textStyleBody",
+                                "maxLines": 1
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${data.textContent.secondaryText.text}",
+                                "style": "textStyleDetails"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${ordinal} | ${listLength}",
+                                "paddingBottom": "20dp",
+                                "color": "white",
+                                "spacing": "5dp"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "HorizontalListItem": {
+                "item": [
+                    {
+                        "type": "Container",
+                        "maxWidth": 528,
+                        "minWidth": 312,
+                        "paddingLeft": 16,
+                        "paddingRight": 16,
+                        "height": "100%",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "source": "${data.image.sources[0].url}",
+                                "height": "40vh",
+                                "width": "40vh"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "<b>${ordinal}.</b> ${data.textContent.primaryText.text}",
+                                "style": "textStyleSecondary",
+                                "maxLines": 1,
+                                "spacing": 12
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${data.textContent.secondaryText.text}",
+                                "style": "textStyleDetails",
+                                "spacing": 4
+                            }
+                        ]
+                    }
+                ]
+            },
+            "ListTemplate2": {
+                "parameters": [
+                    "backgroundImage",
+                    "title",
+                    "logo",
+                    "hintText",
+                    "listData"
+                ],
+                "items": [
+                    {
+                        "when": "${viewport.shape == 'round'}",
+                        "type": "Container",
+                        "height": "100%",
+                        "width": "100%",
+                        "items": [
+                            {
+                                "type": "Sequence",
+                                "scrollDirection": "horizontal",
+                                "data": "${listData}",
+                                "height": "100%",
+                                "width": "100%",
+                                "numbered": true,
+                                "item": [
+                                    {
+                                        "type": "FullHorizontalListItem",
+                                        "listLength": "${payload.listTemplate2ListData.listPage.listItems.length}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "source": "${backgroundImage}",
+                                "scale": "best-fill",
+                                "width": "100vw",
+                                "height": "100vh",
+                                "position": "absolute"
+                            },
+                            {
+                                "type": "AlexaHeader",
+                                "headerTitle": "${title}",
+                                "headerAttributionImage": "${logo}"
+                            },
+                            {
+                                "type": "Sequence",
+                                "scrollDirection": "horizontal",
+                                "paddingLeft": "@marginLeft",
+                                "paddingRight": "@marginRight",
+                                "data": "${listData}",
+                                "height": "70vh",
+                                "width": "100%",
+                                "numbered": true,
+                                "item": [
+                                    {
+                                        "type": "HorizontalListItem"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "AlexaFooter",
+                                "footerHint": "${payload.listTemplate2ListData.hintText}",
+                                "position": "absolute",
+                                "top": "85vh"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "item": [
+                {
+                    "type": "ListTemplate2",
+                    "backgroundImage": "${payload.listTemplate2Metadata.backgroundImage.sources[0].url}",
+                    "title": "${payload.listTemplate2Metadata.title}",
+                    "hintText": "${payload.listTemplate2Metadata.hintText}",
+                    "logo": "${payload.listTemplate2Metadata.logoUrl}",
+                    "listData": "${payload.listTemplate2ListData.listPage.listItems}"
+                }
+            ]
+        }
+    },
+    "standardTemplate7": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeDetails": 20,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "textStyleBase2": {
+                "description": "Regular version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "500"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinDetails": {
+                "values": {
+                    "fontSize": "@textSizeDetails"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            },
+            "textStyleDetails": {
+                "extend": [
+                    "textStyleBase2",
+                    "mixinDetails"
+                ]
+            }
+        },
+        "layouts": {
+            "ListTemplate1": {
+                "parameters": [
+                    "backgroundImage",
+                    "title",
+                    "logo",
+                    "hintText",
+                    "listData"
+                ],
+                "item": [
+                    {
+                        "type": "Container",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "direction": "column",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "source": "${backgroundImage}",
+                                "scale": "best-fill",
+                                "width": "100vw",
+                                "height": "100vh",
+                                "position": "absolute"
+                            },
+                            {
+                                "type": "AlexaHeader",
+                                "headerTitle": "${title}",
+                                "headerAttributionImage": "${logo}"
+                            },
+                            {
+                                "type": "Sequence",
+                                "grow": 1,
+                                "height": "80vh",
+                                "scrollDirection": "vertical",
+                                "paddingLeft": "@marginLeft",
+                                "paddingRight": "@marginRight",
+                                "data": "${listData}",
+                                "numbered": true,
+                                "items": [
+                                    {
+                                        "type": "VerticalListItem",
+                                        "image": "${data.image.sources[0].url}",
+                                        "primaryText": "${data.textContent.primaryText.text}",
+                                        "secondaryText": "${data.textContent.secondaryText.text}",
+                                        "tertiaryText": "${data.textContent.tertiaryText.text}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "VerticalListItem": {
+                "parameters": [
+                    "primaryText",
+                    "secondaryText",
+                    "tertiaryText",
+                    "image"
+                ],
+                "item": [
+                    {
+                        "when": "${viewport.shape == 'round'}",
+                        "type": "Container",
+                        "direction": "row",
+                        "height": 200,
+                        "width": "100%",
+                        "alignItems": "center",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "${ordinal}",
+                                "paddingBottom": "20dp",
+                                "color": "white",
+                                "spacing": "5dp"
+                            },
+                            {
+                                "type": "Image",
+                                "when": "${image}",
+                                "source": "${image}",
+                                "height": 150,
+                                "width": 150,
+                                "spacing": 15,
+                                "scale": "best-fit",
+                                "align": "top"
+                            },
+                            {
+                                "type": "Container",
+                                "direction": "column",
+                                "spacing": 25,
+                                "items": [
+                                    {
+                                        "type": "Text",
+                                        "text": "${primaryText}",
+                                        "style": "textStyleDetail",
+                                        "grow": 1,
+                                        "shrink": 1,
+                                        "fontWeight": "300",
+                                        "maxLines": 1
+                                    },
+                                    {
+                                        "type": "Text",
+                                        "text": "${secondaryText}",
+                                        "style": "textStyleCaption",
+                                        "fontWeight": "300",
+                                        "grow": 1,
+                                        "shrink": 1,
+                                        "maxLines": 1
+                                    },
+                                    {
+                                        "type": "Text",
+                                        "text": "${tertiaryText}",
+                                        "style": "textStyleDetails",
+                                        "fontWeight": "300",
+                                        "grow": 1,
+                                        "shrink": 1,
+                                        "maxLines": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "direction": "row",
+                        "height": 125,
+                        "width": "100%",
+                        "alignItems": "center",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "${ordinal}",
+                                "paddingBottom": "20dp",
+                                "color": "white",
+                                "spacing": "5dp"
+                            },
+                            {
+                                "type": "Image",
+                                "when": "${image}",
+                                "source": "${image}",
+                                "height": 100,
+                                "width": 100,
+                                "align": "top",
+                                "spacing": 50,
+                                "scale": "best-fit"
+                            },
+                            {
+                                "type": "Container",
+                                "spacing": 30,
+                                "direction": "column",
+                                "items": [
+                                    {
+                                        "type": "Text",
+                                        "text": "${primaryText}",
+                                        "style": "textStyleBody",
+                                        "fontWeight": "300",
+                                        "grow": 1,
+                                        "shrink": 1,
+                                        "maxLines": 1
+                                    },
+                                    {
+                                        "type": "Text",
+                                        "text": "${secondaryText}",
+                                        "style": "textStyleDetails",
+                                        "fontWeight": "300",
+                                        "grow": 1,
+                                        "shrink": 1,
+                                        "maxLines": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${tertiaryText}",
+                                "style": "textStyleBody",
+                                "fontWeight": "300",
+                                "grow": 1,
+                                "shrink": 1,
+                                "textAlign": "right",
+                                "maxLines": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "item": [
+                {
+                    "type": "ListTemplate1",
+                    "backgroundImage": "${payload.listTemplate1Metadata.backgroundImage.sources[0].url}",
+                    "title": "${payload.listTemplate1Metadata.title}",
+                    "logo": "${payload.listTemplate1Metadata.logoUrl}",
+                    "listData": "${payload.listTemplate1ListData.listPage.listItems}"
+                }
+            ]
+        }
+    },
+    "touchWrapperCarousal": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeDetails": 20,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "textStyleBase2": {
+                "description": "Regular version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "500"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinDetails": {
+                "values": {
+                    "fontSize": "@textSizeDetails"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            },
+            "textStyleDetails": {
+                "extend": [
+                    "textStyleBase2",
+                    "mixinDetails"
+                ]
+            }
+        },
+        "layouts": {
+            "FullHorizontalListItem": {
+                "parameters": [
+                    "listLength"
+                ],
+                "item": [
+                    {
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "alignItems": "center",
+                        "justifyContent": "end",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "position": "absolute",
+                                "height": "100vh",
+                                "width": "100vw",
+                                "overlayColor": "rgba(0, 0, 0, 0.6)",
+                                "source": "${data.image.sources[0].url}",
+                                "scale": "best-fill"
+                            },
+                            {
+                                "type": "AlexaHeader",
+                                "headerTitle": "${title}",
+                                "headerAttributionImage": "${logo}",
+                                "grow": 1
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${data.textContent.primaryText.text}",
+                                "style": "textStyleBody",
+                                "maxLines": 1
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${data.textContent.secondaryText.text}",
+                                "style": "textStyleDetails"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${ordinal} | ${listLength}",
+                                "paddingBottom": "20dp",
+                                "color": "white",
+                                "spacing": "5dp"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "HorizontalListItem": {
+                "item": [
+                    {
+                        "type": "Container",
+                        "maxWidth": 528,
+                        "minWidth": 312,
+                        "paddingLeft": 16,
+                        "paddingRight": 16,
+                        "height": "100%",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "source": "${data.image.sources[0].url}",
+                                "height": "40vh",
+                                "width": "40vh"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "<b>${ordinal}.</b> ${data.textContent.primaryText.text}",
+                                "style": "textStyleSecondary",
+                                "maxLines": 1,
+                                "spacing": 12
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${data.textContent.secondaryText.text}",
+                                "style": "textStyleDetails",
+                                "spacing": 4
+                            }
+                        ]
+                    }
+                ]
+            },
+            "ListTemplate2": {
+                "parameters": [
+                    "backgroundImage",
+                    "title",
+                    "logo",
+                    "hintText",
+                    "listData"
+                ],
+                "items": [
+                    {
+                        "when": "${viewport.shape == 'round'}",
+                        "type": "Container",
+                        "height": "100%",
+                        "width": "100%",
+                        "items": [
+                            {
+                                "type": "Sequence",
+                                "scrollDirection": "horizontal",
+                                "data": "${listData}",
+                                "height": "100%",
+                                "width": "100%",
+                                "numbered": true,
+                                "item": [
+                                    {
+                                        "type": "TouchWrapper",
+                                        "item": {
+                                            "type": "FullHorizontalListItem",
+                                            "listLength": "${payload.listTemplate2ListData.listPage.listItems.length}"
+                                        },
+                                        "onPress": [
+                                            {
+                                                "type": "SendEvent",
+                                                "arguments": [
+                                                    "LIST",
+                                                    "${data.listItemIdentifier}"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "source": "${backgroundImage}",
+                                "scale": "best-fill",
+                                "width": "100vw",
+                                "height": "100vh",
+                                "position": "absolute"
+                            },
+                            {
+                                "type": "AlexaHeader",
+                                "headerTitle": "${title}",
+                                "headerAttributionImage": "${logo}"
+                            },
+                            {
+                                "type": "Sequence",
+                                "scrollDirection": "horizontal",
+                                "paddingLeft": "@marginLeft",
+                                "paddingRight": "@marginRight",
+                                "data": "${listData}",
+                                "height": "70vh",
+                                "width": "100%",
+                                "numbered": true,
+                                "item": [
+                                    {
+                                        "type": "TouchWrapper",
+                                        "item": [
+                                            {
+                                                "type": "HorizontalListItem"
+                                            }
+                                        ],
+                                        "onPress": [
+                                            {
+                                                "type": "SendEvent",
+                                                "arguments": [
+                                                    "LIST",
+                                                    "${data.listItemIdentifier}"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "AlexaFooter",
+                                "footerHint": "${payload.listTemplate2ListData.hintText}",
+                                "position": "absolute",
+                                "top": "85vh"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "item": [
+                {
+                    "type": "ListTemplate2",
+                    "backgroundImage": "${payload.listTemplate2Metadata.backgroundImage.sources[0].url}",
+                    "title": "${payload.listTemplate2Metadata.title}",
+                    "hintText": "${payload.listTemplate2Metadata.hintText}",
+                    "logo": "${payload.listTemplate2Metadata.logoUrl}",
+                    "listData": "${payload.listTemplate2ListData.listPage.listItems}"
+                }
+            ]
+        }
+    },
+    "touchWrapperCarousalApp": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeDetails": 20,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "textStyleBase2": {
+                "description": "Regular version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "500"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinDetails": {
+                "values": {
+                    "fontSize": "@textSizeDetails"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            },
+            "textStyleDetails": {
+                "extend": [
+                    "textStyleBase2",
+                    "mixinDetails"
+                ]
+            }
+        },
+        "layouts": {
+            "FullHorizontalListItem": {
+                "parameters": [
+                    "listLength"
+                ],
+                "item": [
+                    {
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "alignItems": "center",
+                        "justifyContent": "end",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "position": "absolute",
+                                "height": "100vh",
+                                "width": "100vw",
+                                "overlayColor": "rgba(0, 0, 0, 0.6)",
+                                "source": "${data.image.sources[0].url}",
+                                "scale": "best-fill"
+                            },
+                            {
+                                "type": "AlexaHeader",
+                                "headerTitle": "${title}",
+                                "headerAttributionImage": "${logo}",
+                                "grow": 1
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${data.textContent.primaryText.text}",
+                                "style": "textStyleBody",
+                                "maxLines": 1
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${data.textContent.secondaryText.text}",
+                                "style": "textStyleDetails"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${ordinal} | ${listLength}",
+                                "paddingBottom": "20dp",
+                                "color": "white",
+                                "spacing": "5dp"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "HorizontalListItem": {
+                "item": [
+                    {
+                        "type": "Container",
+                        "maxWidth": 528,
+                        "minWidth": 312,
+                        "paddingLeft": 16,
+                        "paddingRight": 16,
+                        "height": "100%",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "width": "40vh",
+                                "height": "40vh",
+                                "source": "${data.image.sources[0].url}",
+                                "scale": "cover"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "<b>${ordinal}.</b> ${data.textContent.primaryText.text}",
+                                "style": "textStyleSecondary",
+                                "maxLines": 1,
+                                "spacing": 12
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${data.textContent.secondaryText.text}",
+                                "style": "textStyleDetails",
+                                "spacing": 4
+                            }
+                        ]
+                    }
+                ]
+            },
+            "ListTemplate2": {
+                "parameters": [
+                    "backgroundImage",
+                    "title",
+                    "logo",
+                    "hintText",
+                    "listData"
+                ],
+                "items": [
+                    {
+                        "when": "${viewport.shape == 'round'}",
+                        "type": "Container",
+                        "height": "100%",
+                        "width": "100%",
+                        "items": [
+                            {
+                                "type": "Sequence",
+                                "scrollDirection": "horizontal",
+                                "data": "${listData}",
+                                "height": "100%",
+                                "width": "100%",
+                                "numbered": true,
+                                "item": [
+                                    {
+                                        "type": "TouchWrapper",
+                                        "item": [
+                                            {
+                                                "type": "FullHorizontalListItem",
+                                                "listLength": "${payload.listTemplate2ListData.listPage.listItems.length}"
+                                            }
+                                        ],
+                                        "onPress": [
+                                            {
+                                                "type": "SendEvent",
+                                                "arguments": [
+                                                    "LIST",
+                                                    "${data.listItemIdentifier}"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "width": "100vw",
+                                "height": "100vh",
+                                "source": "${backgroundImage}",
+                                "scale": "best-fill",
+                                "overlayColor": "rgb(0,0,0,.6)",
+                                "position": "absolute"
+                            },
+                            {
+                                "type": "AlexaHeader",
+                                "headerTitle": "${title}",
+                                "headerAttributionImage": "${logo}"
+                            },
+                            {
+                                "type": "Sequence",
+                                "scrollDirection": "horizontal",
+                                "paddingLeft": "@marginLeft",
+                                "paddingRight": "@marginRight",
+                                "data": "${listData}",
+                                "height": "70vh",
+                                "width": "100%",
+                                "numbered": true,
+                                "item": [
+                                    {
+                                        "type": "TouchWrapper",
+                                        "item": {
+                                            "type": "HorizontalListItem"
+                                        },
+                                        "onPress": [
+                                            {
+                                                "type": "SendEvent",
+                                                "arguments": [
+                                                    "LIST",
+                                                    "${data.listItemIdentifier}"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "AlexaFooter",
+                                "footerHint": "${payload.listTemplate2ListData.hintText}",
+                                "position": "absolute",
+                                "top": "85vh"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "item": [
+                {
+                    "type": "ListTemplate2",
+                    "backgroundImage": "${payload.listTemplate2Metadata.backgroundImage.sources[0].url}",
+                    "title": "${payload.listTemplate2Metadata.title}",
+                    "hintText": "${payload.listTemplate2Metadata.hintText}",
+                    "logo": "${payload.listTemplate2Metadata.logoUrl}",
+                    "listData": "${payload.listTemplate2ListData.listPage.listItems}"
+                }
+            ]
+        }
+    },
+    "touchWrapperListApp": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.0.0"
+            }
+        ],
+        "resources": [
+            {
+                "description": "Stock color for the light theme",
+                "colors": {
+                    "colorTextPrimary": "#151920"
+                }
+            },
+            {
+                "description": "Stock color for the dark theme",
+                "when": "${viewport.theme == 'dark'}",
+                "colors": {
+                    "colorTextPrimary": "#f0f1ef"
+                }
+            },
+            {
+                "description": "Standard font sizes",
+                "dimensions": {
+                    "textSizeBody": 48,
+                    "textSizePrimary": 27,
+                    "textSizeSecondary": 23,
+                    "textSizeDetails": 20,
+                    "textSizeSecondaryHint": 25
+                }
+            },
+            {
+                "description": "Common spacing values",
+                "dimensions": {
+                    "spacingThin": 6,
+                    "spacingSmall": 12,
+                    "spacingMedium": 24,
+                    "spacingLarge": 48,
+                    "spacingExtraLarge": 72
+                }
+            },
+            {
+                "description": "Common margins and padding",
+                "dimensions": {
+                    "marginTop": 40,
+                    "marginLeft": 60,
+                    "marginRight": 60,
+                    "marginBottom": 40
+                }
+            }
+        ],
+        "styles": {
+            "textStyleBase": {
+                "description": "Base font description; set color",
+                "values": [
+                    {
+                        "color": "@colorTextPrimary"
+                    }
+                ]
+            },
+            "textStyleBase0": {
+                "description": "Thin version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "100"
+                }
+            },
+            "textStyleBase1": {
+                "description": "Light version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "300"
+                }
+            },
+            "textStyleBase2": {
+                "description": "Regular version of basic font",
+                "extend": "textStyleBase",
+                "values": {
+                    "fontWeight": "500"
+                }
+            },
+            "mixinBody": {
+                "values": {
+                    "fontSize": "@textSizeBody"
+                }
+            },
+            "mixinPrimary": {
+                "values": {
+                    "fontSize": "@textSizePrimary"
+                }
+            },
+            "mixinDetails": {
+                "values": {
+                    "fontSize": "@textSizeDetails"
+                }
+            },
+            "mixinSecondary": {
+                "values": {
+                    "fontSize": "@textSizeSecondary"
+                }
+            },
+            "textStylePrimary": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinPrimary"
+                ]
+            },
+            "textStyleSecondary": {
+                "extend": [
+                    "textStyleBase0",
+                    "mixinSecondary"
+                ]
+            },
+            "textStyleBody": {
+                "extend": [
+                    "textStyleBase1",
+                    "mixinBody"
+                ]
+            },
+            "textStyleSecondaryHint": {
+                "values": {
+                    "fontFamily": "Bookerly",
+                    "fontStyle": "italic",
+                    "fontSize": "@textSizeSecondaryHint",
+                    "color": "@colorTextPrimary"
+                }
+            },
+            "textStyleDetails": {
+                "extend": [
+                    "textStyleBase2",
+                    "mixinDetails"
+                ]
+            }
+        },
+        "layouts": {
+            "ListTemplate1": {
+                "parameters": [
+                    "backgroundImage",
+                    "title",
+                    "logo",
+                    "hintText",
+                    "listData"
+                ],
+                "item": [
+                    {
+                        "type": "Container",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "direction": "column",
+                        "items": [
+                            {
+                                "type": "Image",
+                                "width": "100vw",
+                                "height": "100vh",
+                                "source": "${backgroundImage}",
+                                "scale": "best-fill",
+                                "overlayColor": "rgb(0,0,0,0.6)",
+                                "position": "absolute"
+                            },
+                            {
+                                "headerTitle": "${title}",
+                                "headerAttributionImage": "${logo}",
+                                "headerBackButton": true,
+                                "headerBackButtonCommand": [
+                                    {
+                                        "type": "SendEvent",
+                                        "arguments": [
+                                            "BACK"
+                                        ]
+                                    }
+                                ],
+                                "type": "AlexaHeader"
+                            },
+                            {
+                                "type": "Sequence",
+                                "grow": 1,
+                                "height": "80vh",
+                                "scrollDirection": "vertical",
+                                "paddingLeft": "@marginLeft",
+                                "paddingRight": "@marginRight",
+                                "data": "${listData}",
+                                "numbered": true,
+                                "items": [
+                                    {
+                                        "type": "TouchWrapper",
+                                        "item": [
+                                            {
+                                                "type": "VerticalListItem",
+                                                "image": "${data.image.sources[0].url}",
+                                                "primaryText": "${data.textContent.primaryText.text}",
+                                                "secondaryText": "${data.textContent.secondaryText.text}",
+                                                "tertiaryText": "${data.textContent.tertiaryText.text}"
+                                            }
+                                        ],
+                                        "onPress": [
+                                            {
+                                                "type": "SendEvent",
+                                                "arguments": [
+                                                    "CATEGORY",
+                                                    "${data.listItemIdentifier}"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "VerticalListItem": {
+                "parameters": [
+                    "primaryText",
+                    "secondaryText",
+                    "tertiaryText",
+                    "image"
+                ],
+                "item": [
+                    {
+                        "when": "${viewport.shape == 'round'}",
+                        "type": "Container",
+                        "direction": "row",
+                        "height": 200,
+                        "width": "100%",
+                        "alignItems": "center",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "${ordinal}",
+                                "paddingBottom": "20dp",
+                                "color": "white",
+                                "spacing": "5dp"
+                            },
+                            {
+                                "type": "Image",
+                                "when": "${image}",
+                                "width": "150",
+                                "height": "150",
+                                "source": "${image}",
+                                "scale": "cover",
+                                "align": "top",
+                                "spacing": "15"
+                            },
+                            {
+                                "type": "Container",
+                                "direction": "column",
+                                "items": [
+                                    {
+                                        "type": "Text",
+                                        "text": "${primaryText}",
+                                        "style": "textStyleDetail",
+                                        "grow": 1,
+                                        "shrink": 1,
+                                        "fontWeight": "300",
+                                        "maxLines": 1
+                                    },
+                                    {
+                                        "type": "Text",
+                                        "style": "textStyleCaption",
+                                        "maxLines": 2,
+                                        "text": "${secondaryText}",
+                                        "fontWeight": "300",
+                                        "grow": 1,
+                                        "shrink": 1
+                                    }
+                                ],
+                                "spacing": "25"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "direction": "row",
+                        "height": 125,
+                        "width": "100%",
+                        "alignItems": "center",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "${ordinal}",
+                                "paddingBottom": "20dp",
+                                "color": "white",
+                                "spacing": "5dp"
+                            },
+                            {
+                                "type": "Image",
+                                "when": "${image}",
+                                "width": "100",
+                                "height": "100",
+                                "source": "${image}",
+                                "scale": "cover",
+                                "align": "top",
+                                "spacing": "50"
+                            },
+                            {
+                                "type": "Container",
+                                "spacing": 30,
+                                "direction": "column",
+                                "items": [
+                                    {
+                                        "type": "Text",
+                                        "text": "${primaryText}",
+                                        "style": "textStyleBody",
+                                        "fontWeight": "300",
+                                        "grow": 1,
+                                        "shrink": 1,
+                                        "maxLines": 1
+                                    },
+                                    {
+                                        "type": "Text",
+                                        "text": "${secondaryText}",
+                                        "style": "textStyleDetails",
+                                        "fontWeight": "300",
+                                        "grow": 1,
+                                        "shrink": 1,
+                                        "maxLines": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "item": [
+                {
+                    "type": "ListTemplate1",
+                    "backgroundImage": "${payload.listTemplate1Metadata.backgroundImage.sources[0].url}",
+                    "title": "${payload.listTemplate1Metadata.title}",
+                    "logo": "${payload.listTemplate1Metadata.logoUrl}",
+                    "listData": "${payload.listTemplate1ListData.listPage.listItems}"
+                }
+            ]
+        }
+    },
+    "scrollExample": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "ScrollView",
+                    "items": [
+                        {
+                            "type": "Text",
+                            "text": "This is a really long Text. This is a really long Text. This is a really long Text. This is a really long Text. This is a really long Text. This is a really long Text. This is a really long Text. This is a really long Text. This is a really long Text."
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "videoOnly": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Video",
+                    "autoplay": true,
+                    "source": "http://techslides.com/demos/sample-videos/small.mp4"
+                }
+            ]
+        }
+    },
+    "pagerExample": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Pager",
+                    "width": "100vw",
+                    "navigation": "wrap",
+                    "items": [
+                        {
+                            "type": "Text",
+                            "text": "Text content shown on page #1"
+                        },
+                        {
+                            "type": "Text",
+                            "text": "Text content shown on page #2"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "frameExample": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Frame",
+                    "borderRadius": 25,
+                    "width": "50",
+                    "height": "50",
+                    "backgroundColor": "grey",
+                    "item": {
+                        "type": "Text",
+                        "text": "2",
+                        "width": "50",
+                        "height": "50",
+                        "textAlign": "center",
+                        "textAlignVertical": "center"
+                    }
+                }
+            ]
+        }
+    }
+}
