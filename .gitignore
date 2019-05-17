@@ -1,0 +1,8 @@
+.build
+node_modules/
+.serverless/
+.DS_Store
+schema.json
+.build
+.vscode/
+.history

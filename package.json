@@ -1,0 +1,30 @@
+{
+  "name": "sample-alexa-skill-multimodal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voxxup/sample-alexa-multimodal.git"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "multimodal",
+    "voxxup"
+  ],
+  "author": "Gautam Vanani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voxxup/sample-alexa-multimodal/issues"
+  },
+  "homepage": "https://github.com/voxxup/sample-alexa-multimodal#readme",
+  "dependencies": {
+    "ask-sdk-core": "^2.0.7",
+    "ask-sdk-model": "^1.4.1",
+    "aws-sdk": "^2.326.0"
+  }
+}
